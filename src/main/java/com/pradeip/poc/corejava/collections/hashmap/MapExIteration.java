@@ -1,4 +1,5 @@
-package com.p2.collections.hashmap;
+package com.pradeip.poc.corejava.collections.hashmap;
+
 
 import java.util.HashMap;
 import java.util.Iterator;

@@ -1,4 +1,5 @@
-package com.p2.designpatterns;
+package com.pradeip.poc.corejava.designpatterns;
+
 
 import java.io.Serializable;
 

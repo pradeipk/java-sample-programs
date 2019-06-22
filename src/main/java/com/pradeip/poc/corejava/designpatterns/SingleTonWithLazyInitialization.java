@@ -1,4 +1,5 @@
-package com.p2.designpatterns;
+package com.pradeip.poc.corejava.designpatterns;
+
 
 /**
  * Java Code to create singleton class With Lazy initialization, Only when you call

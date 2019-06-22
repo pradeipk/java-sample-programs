@@ -1,4 +1,5 @@
-package com.p2.operatorsAndDatatypes;
+package com.pradeip.poc.corejava.operatorsAndDatatypes;
+
 
 
 // Java supports following two Bitwise right shift operators.

@@ -1,4 +1,5 @@
-package com.p2.staticMembers;
+package com.pradeip.poc.corejava.staticMembers;
+
 
 public class StaticEx {
 	

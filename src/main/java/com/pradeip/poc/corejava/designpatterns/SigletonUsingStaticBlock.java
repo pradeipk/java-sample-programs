@@ -1,4 +1,5 @@
-package com.p2.designpatterns;
+package com.pradeip.poc.corejava.designpatterns;
+
 
 
 /**class is created when it is loaded to the memory by JVM. It is done by assigning the reference an instance directly.

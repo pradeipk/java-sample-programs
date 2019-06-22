@@ -1,4 +1,5 @@
-package com.p2.designproblems;
+package com.pradeip.poc.corejava.designproblems;
+
 
 //http://www.geeksforgeeks.org/design-parking-lot-using-object-oriented-principles/
 

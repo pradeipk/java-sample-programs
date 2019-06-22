@@ -1,4 +1,5 @@
-package com.p2.programs;
+package com.pradeip.poc.corejava.programs;
+
 /**
  * sample code to reverse Singly Linked List by iterating through it only once.
  * @author pradeep_patel

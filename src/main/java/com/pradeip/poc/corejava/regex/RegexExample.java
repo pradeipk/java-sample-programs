@@ -1,4 +1,5 @@
-package com.p2.regex;
+package com.pradeip.poc.corejava.regex;
+
 
 import java.util.regex.Pattern;
 import java.util.Scanner;

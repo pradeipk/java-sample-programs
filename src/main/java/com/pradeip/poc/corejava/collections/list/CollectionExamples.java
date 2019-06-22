@@ -1,4 +1,5 @@
-package com.p2.collections.list;
+package com.pradeip.poc.corejava.collections.list;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;

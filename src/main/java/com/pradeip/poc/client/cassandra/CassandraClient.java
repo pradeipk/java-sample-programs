@@ -1,5 +1,7 @@
 package com.pradeip.poc.client.cassandra;
 
+import com.datastax.driver.core.Cluster;
+import com.datastax.driver.core.Session;
 
 public class CassandraClient {
 
@@ -11,12 +13,12 @@ public class CassandraClient {
 
 class CassandraConnector {
 
-	private Cluster cluster;
+	private static Cluster cluster;
 
-	private Session session;
+	private static Session session;
 
 	public static void connect(String node, Integer port) {
-		Builder b = Cluster.builder().addContactPoint(node);
+		com.datastax.driver.core.Cluster.Builder b = Cluster.builder().addContactPoint(node);
 		if (port != null) {
 			b.withPort(port);
 		}
@@ -26,7 +28,7 @@ class CassandraConnector {
 	}
 
 	public static Session getSession() {
-		return this.session;
+		return session;
 	}
 
 	public static void close() {
@@ -34,13 +36,10 @@ class CassandraConnector {
 		cluster.close();
 	}
 
-	public void createKeyspace(String keyspaceName, String replicationStrategy,
-			int replicationFactor) {
-		StringBuilder sb = new StringBuilder("CREATE KEYSPACE IF NOT EXISTS ")
-				.append(keyspaceName).append(" WITH replication = {")
-				.append("'class':'").append(replicationStrategy)
-				.append("','replication_factor':").append(replicationFactor)
-				.append("};");
+	public void createKeyspace(String keyspaceName, String replicationStrategy, int replicationFactor) {
+		StringBuilder sb = new StringBuilder("CREATE KEYSPACE IF NOT EXISTS ").append(keyspaceName)
+				.append(" WITH replication = {").append("'class':'").append(replicationStrategy)
+				.append("','replication_factor':").append(replicationFactor).append("};");
 
 		String query = sb.toString();
 		session.execute(query);

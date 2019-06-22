@@ -1,4 +1,5 @@
-package com.p2.play;
+package com.pradeip.poc.corejava.play;
+
 
 import java.util.Collections;
 
