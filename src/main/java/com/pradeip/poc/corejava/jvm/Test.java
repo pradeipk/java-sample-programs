@@ -1,4 +1,4 @@
-package com.p2.jvm;
+package com.pradeip.poc.corejava.jvm;
 
 //A Java program to demonstrate working of a Class type
 //object created by JVM to represent .class file in

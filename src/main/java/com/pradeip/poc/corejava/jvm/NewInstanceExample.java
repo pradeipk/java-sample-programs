@@ -1,4 +1,4 @@
-package com.p2.jvm;
+package com.pradeip.poc.corejava.jvm;
 
 public class NewInstanceExample {
 	java.lang.String name = "GeeksForGeeks";
