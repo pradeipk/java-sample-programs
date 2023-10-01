@@ -141,3 +141,1212 @@ Palindrome
 		}
 		return result;
 	}
+
+
+
+----------
+
+1. Write a program in Java to reverse a number.
+Ans. Extract each digit and keep multiplying with 10 and adding the remainder.
+
+static int REV(int n){   
+          long RevNumber=0;
+          while (n>0)
+          {
+            RevNumber=(RevNumber*10)+(n%10);
+            n=n/10;
+          }
+          return  (int) RevNumber;   
+        }
+2. Write a program to print all the elements of Fibonacci series.
+Ans. A Fibonacci series is given by
+
+Fibn=Fibn-1+Fib(n-2)
+public static int fibonacci(int number){
+        if(number == 1 || number == 2){ //base case
+            return 1;
+        }
+        return fibonacci(number-1) + fibonacci(number -2); 
+    }  
+public static void main(String args[]) {
+        int number = new Scanner(System.in).nextInt();
+        for(int i=1; i<=number; i++){
+            System.out.print(fibonacci2(i) +" ");
+        }    
+    }
+3. Can you write a program to check whether a number is prime number or not?
+Ans. Check for all the numbers below the given number that any of them divides the given number or not.
+
+public static void main(String args[])
+    {
+        int num, i, count=0;
+        Scanner scan = new Scanner(System.in);
+        num = scan.nextInt();
+        for(i=2; i<num; i++)
+        {
+            if(num%i == 0)
+            {
+                count++;
+                break;
+            }
+        }
+        if(count == 0)
+        {
+            System.out.print("Prime Number");
+        }
+        else
+        {
+            System.out.print("Not a Prime Number");
+        }
+    }
+4. Write a program to swap two numbers in Java.
+Ans. Two ways to do this -with third variable and without third variable.
+
+public static void swapNumberswithtemp(int a, int b) { //using 3rd variable
+    int temp = a;
+    a = b;
+    b = temp;
+}
+public static void swapNumberswithouttemp(int a, int b) {//without using 3rd variable
+    b = b + a;
+    a = b - a;
+    b = b - a;
+}
+public static void main(String[] args) {
+    int a = 10;
+    int b = 20;
+    swapNumbers(a, b);
+    System.out.printf("%d %d", a, b); 
+}
+5. Write a code to print all the first n prime numbers where n will be given as input.
+Ans.
+
+public static void main(String[] args) {
+        int N = 200;
+        int k;
+        Scanner sc = new Scanner(System.in);
+        k = sc.nextInt();
+        int i = 0;
+        for (int num = 2; num <= N; num++) {
+            if (isPrimeNumber(num) && i!=k) {
+                System.out.println(num);
+                i++;
+            }
+        }
+    }
+    public static boolean isPrimeNumber(int num) {
+        for (int i = 2; i < num; i++) {
+            if (num % i == 0) {
+                return false; 
+            }
+        }
+        return true; 
+    }
+6. Write a program to find the position of a pair of numbers whose sum is equal to a given sum.
+Ans. Using two pointer approach.
+
+public int[] findPairWithSum(int[] array, int target) {
+        int[] result = new int[2];
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for(int i=0; i<array.length; i++) {
+            int difference = target - array[i];
+            if(map.containsKey(array[i])) {
+                result[0] = map.get(array[i]);
+                result[1] = i;
+            } else {
+                map.put(difference, i);
+            }
+        }
+        return result;
+    }
+public static void main(String args[]) {
+        int[] arr = {2,5,11,1,7,6,9};
+        int[] pos = findPairWithSum(arr, arr.length);
+        System.out.println(pos[0] + "," + pos[1]);
+    }
+7. Check if a given number is palindrome or not.
+Ans. A palindrome is a number which is when reversed give the same number. We find the reverse and check whether it is equal to the given number or not.
+
+public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String str = in.nextLine();
+        int length = str.length();         
+        boolean isPalindrome = true;          
+        for(int i = 0; i < length; i++)
+        {
+            if(str.charAt(i) != str.charAt(length-1-i)) {
+                System.out.println("Snot a palindrome.");
+                isPalindrome = false;
+                break;
+            }
+        }          
+        if(isPalindrome) {
+            System.out.println("palindrome.");
+        }
+    }
+8. Write a program to find whether a number is an Armstrong number or not.
+Ans. Armstrong number – Sum of the cubes of its digit is equal to the number itself. E.g – 153
+
+public static void main(String[] args) 
+    {
+        int num = Integer.parseInt(args[0]);        
+        int temp = num;
+        int count = 0;
+        int sum = 0;
+        while(num > 0)   
+        {
+            num = num / 10;
+            count++;
+        }                           
+        num = temp;
+        while (num > 0)
+        {
+            int rem = num % 10;
+            int val = 1;
+            for(int i = 1; i <= count; i++)
+            {   
+                val = val * rem;
+            }
+            num = num / 10;
+            sum = sum + val;
+        }   
+        if(temp == sum)
+            {               System.out.println("Armstrong number");
+            }
+            else
+            {
+                System.out.println("Not an armstrong number");
+            }   
+    }
+9. Find the factorial of a given number.
+Ans.
+
+N!=1*2*3*4*…*N-1*N 
+public static void main(String args[])throws IOException {
+     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+      int i,j,fact=1;
+    i=Integer.parseInt(br.readLine());
+    for(j=1;j<=i;j++) {
+    fact=fact*j;
+    System.out.println(fact);
+  }
+}
+10. Find the GCD of two numbers in logn time.
+Ans.
+
+public static int gcd(int a, int b) {
+    while (((a > 0) && (b > 0))) {
+      if ((a > b)) {
+        a = (a % b);
+      } else {
+        b = (b % a);
+      }
+    }
+    if ((a == 0)) {
+      return b;
+    } else {
+      return a;
+    }
+  }  
+  public static void main(String[] args) {
+    int a = new Scanner(System.in);
+    int b = new Scanner(System.in);
+    System.out.println(GCD.gcd(a, b));
+  }
+11. Write a program to check whether a year is leap year or not.
+Ans.
+
+static void isLeapYear(int year){
+        boolean isLeap;
+        if(year%4==0){
+            if(year%100==0){
+                if(year%400==0){
+                    isLeap = true;
+                }else{
+                    isLeap = false;
+                }
+            }else{
+                isLeap = true;
+            }
+        }else{
+            isLeap = false;
+        }
+
+        if(isLeap)
+            System.out.println("leap year");
+        else
+            System.out.println("Not a leap year");
+    }
+
+    public static void main(String[] args) {
+        isLeapYear(1992);
+        isLeapYear(2000);
+        isLeapYear(2001);
+        isLeapYear(2002);
+        isLeapYear(2004);
+    }
+12. Check whether a character inserted is a vowel or consonant.
+Ans.
+
+public static void main(String[ ] arg)
+    {
+    int i=0;
+    Scanner sc=new Scanner(System.in);
+    char ch=sc.next( ).charAt(0);       if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')
+    {
+    System.out.println("Vowel"); 
+    }
+    else if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))
+        System.out.println("Consonant");
+          else
+        System.out.println("Symbols");    
+    }
+Input: a
+Output: Vowel
+13. Can you code the Binary Search Algorithm in Java?
+Ans.
+
+ public int binarySearch(int a[], int num)
+    {
+        if(num>a[a.length-1]||num<a[0])return -1;
+        int start=0;
+        int end =a.length-1;
+        int mid=(start+end)/2;
+        while(a[mid]!=num){
+            if(num<mid){
+                end=mid;
+            }else{
+                start=mid;
+            }
+            mid = (start+end)/2;
+        }
+        return mid;
+    }
+14. Given two strings find if one of them is an Anagram of the other.
+Ans. Two strings AA and BB are called anagrams if they consist same characters, but may be in different orders. So, the list of anagrams of CAT are "CAT", "ACT", "TAC", "TCA","ATC" and "CTA".
+
+static boolean isAnagram(String A, String B) {
+       boolean f = false;
+      char[] c = A.toCharArray();
+      Arrays.sort(c);
+      char[] d = B.toCharArray();
+      Arrays.sort(d);
+      String a = new String (c);
+      String b = new String (d);
+      if (a.equals(b)) {
+          f=true;
+      }
+      return f;
+   }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String A=sc.next();
+        String B=sc.next();
+        boolean ret=isAnagram(A,B);        if(ret)System.out.println("Anagrams");
+        else System.out.println("Not Anagrams");        
+    }
+15. Can you write the Bubble Sort Algorithm?
+Ans. The idea is to bubble out the greater numbers to the right.
+
+public void sort(int[] numbers) {
+    validateInput(numbers);
+    int length = numbers.length;
+    boolean swap = true;
+    while (swap) {
+      swap = false;
+      for (int i = 0; i < length - 1; i++) {
+        for (int j = 0; j < length - i - 1; j++) {
+          if (numbers[j] > numbers[j + 1]) {
+            swap(numbers, j, j + 1);
+            swap = true;
+          }
+        }
+      }
+    }
+  }
+}
+16. Implement the merge Sort algorithm.
+Ans. This is a Divide and conquer algorithm.
+
+public static void main(String[] args) {
+        int[] list = {4,5,2,1,3};
+        mergeSort(list, 0, list.length - 1);
+    }
+    public static void mergeSort(int[] a, int first, int last)
+      {
+        if(last - first == 0) 
+        {
+        }
+        else if (last - first == 1) 
+        {
+            if(a[first] > a[last])
+            {
+                int temp = a[first];
+                a[first] = a[last];
+                a[last] = temp;
+            }
+        }
+        else    
+        {
+            int mid = (first + last) / 2;
+            mergeSort(a, first, mid);
+            mergeSort(a, mid + 1, last);
+            merge(a, first, mid, last);
+        }
+      }
+    private static void merge(int[] a, int first, int mid, int last)
+      {
+        int[] temp = new int[last - first + 1];
+        int i = first; int j = mid + 1;
+        for(int k = first; k <= last; k++)
+        {
+            if(i > mid || j > last)
+            {
+                if(i > mid && j <= last)
+                {
+                    System.out.println("a[j]: " + a[j]);
+                    temp[k - first] = a[j];
+                    j++;
+                }
+                else if(i <= mid && j > last)
+                {
+                    System.out.println("a[i]: " + a[i]);
+                    temp[k - first] = a[i];
+                    i++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            else
+            {
+                if(a[i] < a[j])
+                {
+                    temp[k - first] = a[i];
+                    i++;
+                }
+                else
+                {
+                    temp[k - first] = a[j];
+                    j++;
+                }
+            }
+        }
+        for(int count = 0; count < temp.length; count++)
+        {
+            a[first + count] = temp[count];
+        }
+      }
+17. Write a program to add two matrices in java.
+Ans. For example we are just adding two 3×3 matrices here.
+
+public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        double[][] matrixOne = new double[3][3];
+        double[][] matrixTwo = new double[3][3];
+        System.out.println("Enter matrix1 (3x3): ");
+        for (int i = 0; i < matrixOne.length; i++) {
+            for (int j = 0; j < matrixOne[i].length; j++) {
+                matrixOne[i][j] = in.nextDouble();
+            }
+        }
+        System.out.println("Enter matrix2 (3x3): ");
+        for (int i = 0; i < matrixTwo.length; i++) {
+            for (int j = 0; j < matrixTwo[i].length; j++) {
+                matrixTwo[i][j] = in.nextDouble();
+            }
+        }
+        double[][] sum = addMatrix(matrixOne, matrixTwo);
+    }
+
+    public static double[][] addMatrix(double[][] a, double[][] b) {
+        double[][] c = new double[a.length][a.length];
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a.length; j++) {
+                c[i][j] = a[i][j] + b[i][j];
+            }
+        }
+        return c;
+    }
+18. Write a program to convert decimal to binary.
+Ans.
+
+public static void main(String arg[])   
+{
+
+    Scanner sc=new Scanner(System.in); //decimal number
+    int n=sc.nextInt();
+    int  bin[]=new int[100];
+    int i = 0;
+    while(n > 0)
+    {
+    bin[i++] = n%2;
+       n = n/2;
+    }
+    for(int j = i-1;j >= 0;j--)
+   {
+       System.out.print(bin[j]);
+   }
+}
+19. Write a program to convert decimal to hexd.
+Ans.
+
+public static void main(String args[])
+    {
+        char ch[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+    int rem,num;
+    String hexd=""; 
+        Scanner sc = new Scanner(System.in);  
+        num=sc.nextInt();
+        while(num != 0)
+        {
+    rem=num%16;
+    hexd= ch[rem] + hexd;
+               num= num/16;
+        }   
+       System.out.print(hexd);   
+    }
+20. Write a program to find the sum of n natural numbers
+Ans.
+
+1ni=n*(n+1)/2
+public static void main(String arg[]){
+                  int n,sum=0;
+                  Scanner sc=new Scanner(System.in);
+                    sum = (n*(n+1))/2;
+                   System.out.println(sum);                  
+                }
+21. Write a program to check whether a number is perfect number or not?
+Ans. The number which is equal to the sum of its divisors is called a perfect number.
+
+ public static void main(String arg[])  
+    {
+        long n,sum=0;
+        Scanner sc=new Scanner(System.in);       
+        n=sc.nextLong();
+        int i=1;
+        while(i<=n/2)
+        {
+           if(n%i==0)
+           {
+        sum+=i;
+           }
+          i++;
+        }
+    if(sum==n)
+    {
+    System.out.println("  perfect number");
+     } 
+    else
+    System.out.println(" not a  perfect number"); 
+    }
+22. Write a program to find the lcm of two numbers.
+Ans.
+
+private static int getGCD(int num1, int num2) {
+    while (num2 > 0) {
+        int temp = num2;
+        num2 = num1 % num2;
+        num1 = temp;
+    }
+    return num1;
+}
+private static int getLCM(int num1, int num2) {
+    return num1 * (num2 / getGCD(num1, num2));
+}
+23. Calculate the average of n numbrs.
+Ans.
+
+public static void main(String arg[])   
+    {   
+       int n;double sum=0;
+       Scanner sc=new Scanner(System.in);
+       n=sc.nextInt(); 
+       int a[]=new int[n]; 
+       System.out.println(n); 
+       for(int i=0;i<n;i++)
+       a[i]=sc.nextInt(); 
+       for(int i=0;i 0){
+            remainder=number % 10;
+            total+=remainder;
+            number=number/10;
+         }
+        System.out.println(total);
+    }
+24. Calculate the sum of digits of a given number.
+Ans.
+
+public static void main(String args[]){
+     long number=-9999,input=-9999;
+        try{    
+           number=Long.parseLong(System.console().readLine());
+           input=number;    
+        }catch(NumberFormatException nfe){
+           System.exit(1);    
+          }
+        long remainder=0,total=0;
+        while(number > 0){
+            remainder=number % 10;
+            total+=remainder;
+            number=number/10;
+         }
+        System.out.println(total);
+    }
+25. Write a function to calculate the power of a number.
+Ans.
+
+public static long powerN(int number, int power) {
+        int result = 1;
+        int counter = 1;
+        while (counter <= power) 
+        {
+            result = result * number;
+            counter += 1;
+        }
+        System.out.println(result);
+        return result;
+    }
+26. Write a function to substract two matrices.
+Ans.
+
+public void subtraction()
+    {
+        Scanner in = new Scanner(System.in);
+        int[][] b = new int[row][column];
+        for (int i = 0; i < row; i++)
+        {  
+            int u = i + 1;
+            for (int j = 0; j < column; j++)
+            {  
+                b[i][j] = in.nextInt();
+            }
+        }
+        int[][] sub = new int[row][column];
+        for(int i = 0; i < row; i++)
+        {
+            for (int j = 0; j < column; j++)
+            {
+                sub[i][j] = a[i][j] - b[i][j];
+            }
+        }
+        //sub stores the result
+    }
+27. Write a program to multiply two matrices
+Ans.
+
+public static void main(String args[])
+{
+int row1, row2,col1,col2,i,j,k,sum;
+Scanner in = new Scanner(System.in);
+row1 = in.nextInt();;
+col1 = in.nextInt();
+row2 = in.nextInt();
+col2 = in.nextInt();
+ if(col1==row2)
+{ 
+int mat1[][] = new int[row1][col1]; 
+int mat2[][] = new int[row2][col2]; 
+int res[][] = new int[row1][col2];
+ for ( i= 0 ; i < row1 ; i++ )
+{ 
+ for ( j= 0 ; j < col1 ;j++ )
+mat1[i][j] = in.nextInt();
+ }
+ for ( i= 0 ; i < row2 ; i++ )
+{  
+for ( j= 0 ; j < col2 ;j++ )
+mat2[i][j] = in.nextInt();
+}
+for ( i= 0 ; i < row1 ; i++ ) 
+for ( j= 0 ; j <col2;j++)
+{
+sum=0;
+for ( k= 0 ; k <row2;k++ )
+sum +=mat1[i][k]*mat2[k][j] ;
+res[i][j]=sum;
+}
+for ( i= 0 ; i < row1; i++ )
+{
+for ( j=0 ; j =0; i--){
+            reverse = reverse + source.charAt(i);
+        }      
+        return reverse;
+    }
+28. Write a program to reverse a string.
+Ans. We use the string buffer class to easily reverse the string
+
+ public static void main(String args[]) {
+        String word = "HelloWorld";
+        String reverse = new StringBuffer(word).reverse().toString();
+        word = "thisisstring";
+        reverse = new StringBuilder(word).reverse().toString();
+        System.out.printf(reverse);
+    }     
+    public static String reverse(String source){
+        if(source == null || source.isEmpty()){
+            return source;
+        }       
+        String reverse = "";
+        for(int i = source.length() -1; i>=0; i--){
+            reverse = reverse + source.charAt(i);
+        }      
+        return reverse;
+    }
+29. Implement Selection Sort in java.
+Ans.
+
+public void sortArr(int[] arr) {
+        int selectedValue, swapValues;
+        for (int i=0; i<arr.length-1; i++) {
+            selectedValue = i; 
+            for (int n=i+1; n < arr.length; n++) { 
+                if (arr[n] < arr[selectedValue]) { 
+                    selectedValue =n; 
+                }
+            }
+                swapValues = arr[selectedValue]; 
+                arr[selectedValue] = arr[i];
+                arr[i] = swapValues;
+        }
+    }
+public static void main(String[] args) {
+        int[] arr = {4,2,1,2,5};
+        sortArr(arr); 
+    }
+30. Write a program to linearly search an element.
+Ans.
+
+Ans. public class LinearSearch {
+   public static void main(String args[]){
+      int array[] = {1, 3, 7, 2, 9, 4};
+      int size = array.length;
+      int value = 7;
+
+      for (int i=0 ;i< size-1; i++){
+         if(array[i]==value){
+            System.out.println(i);
+         }else{
+            System.out.println(" not found");
+         }
+      }
+   }
+}
+Output: 2
+31. Find the length of a Linked List.
+Ans.
+
+public class SinglyLinkedList {
+    public int key;
+    public SinglyLinkedList next;
+public void count(SinglyLinkedList begin) {
+        int count = 0;
+        if (begin == null) {
+            System.out.println("Empty");
+            return;
+        }
+        System.out.println();
+        SinglyLinkedList p = begin;
+        while(p != null) {
+            count++;
+            p = p.next;
+        }
+        System.out.println();
+    }
+}
+32. Can you reverse a linked list?
+Ans.
+
+/*public class Node {
+        int  data;
+        Node next;
+        public Node(int item) {
+            this.data = item;
+        }
+    }*/
+public void reverseLinkedList(LinkedList list) {
+        boolean firstReverse = true;
+        Node prev = null;
+        Node current = null;
+        Node next = null;
+        prev = list.head;
+        current = prev.next;
+        next = current.next;
+        while (next != null) {
+            current.next = prev;
+            if (firstReverse) {
+                prev.next = null;
+                firstReverse = false;
+            }
+            prev = current;
+            current = next;
+            next = next.next;
+        }
+        current.next = prev;
+        list.head = current;
+   }
+33. Write a program to check whether a LinkedList contains loop.
+Ans. Using fast and slow pointer. Idea is the fast pointer will meet the slow pointer if there is a loop present in the linked list.
+
+public class LinkedList {
+  private Node head;
+  public LinkedList() { 
+      this.head = new Node("head"); 
+  }   
+  public Node head() {
+    return head;
+  }
+  public void appendIntoTail(Node node) {
+    Node current = head;
+    while(current.next() != null){
+      current = current.next();
+    }    
+    current.setNext(node);
+  }    
+  public boolean isCyclic(){
+        Node fast = head;
+        Node slow = head;        
+        while(fast!= null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;           
+            if(fast == slow ){
+                return true;
+            }          
+        }
+        return false;
+   }
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        Node current = head.next();
+        int count = 0;
+        while(current != null){           sb.append(current.data).append("-->");
+           current = current.next();
+           count++;
+          if(count == 10)
+            break;
+        }       
+       return sb.toString();
+    }
+    public static class Node {
+        private Node next;
+        private String data;
+        public Node(String data) {
+            this.data = data;
+        }
+        public String data() { 
+          return data; 
+        }        
+        public void setData(String data) {
+          this.data = data;
+        }
+        public Node next() { 
+          return next; 
+        }        
+        public void setNext(Node next) {
+          this.next = next; 
+        }
+        @Override
+        public String toString() {
+            return this.data;
+        }
+    }
+}
+public class LoopInLinkedListTest { 
+    public static void main(String args[]) { 
+      LinkedList linkedList = new LinkedList();
+      if(false){
+        linkedList.appendIntoTail(new LinkedList.Node("101")); 
+        linkedList.appendIntoTail(new LinkedList.Node("201")); 
+        linkedList.appendIntoTail(new LinkedList.Node("301")); 
+        linkedList.appendIntoTail(new LinkedList.Node("401")); 
+        System.out.println("Linked List : " + linkedList); 
+      }else{
+        linkedList.appendIntoTail(new LinkedList.Node("101"));
+        LinkedList.Node cycle = new LinkedList.Node("201");
+        linkedList.appendIntoTail(cycle);
+        linkedList.appendIntoTail(new LinkedList.Node("301"));
+        linkedList.appendIntoTail(new LinkedList.Node("401"));
+        linkedList.appendIntoTail(cycle); 
+        System.out.println("Linked List : " + linkedList);
+      }         
+      if(linkedList.isCyclic()){ 
+          System.out.println("contains loop"); 
+        }
+        else{ 
+          System.out.println("no loop"); 
+        } 
+
+    }
+}
+34. Write a program to count the number of words in a string using HashMap.
+Ans. Split the string at “ ” spaces and count those as words.
+
+public static void main(String[] args) {
+        String str = "This this a string";
+        String[] split = str.split(" ");
+         HashMap map = new HashMap();
+        for (int i=0; i<split.length; i++) {
+            if (map.containsKey(split[i])) {
+                int count = map.get(split[i]);
+                map.put(split[i], count+1);
+            }
+            else {
+                map.put(split[i], 1);
+            }
+        }
+        System.out.println(map);
+    }
+35. Write a program to find the duplicate characters in a string.
+Ans.
+
+public static void main(String[] args) {
+                  String str = new String("duplicatestring");
+                  int count = 0;
+                  char[] chars = str.toCharArray();
+                  for (int i=0; i<str.length();i++) {
+                              for(int j=i+1; j<str.length();j++) {
+                                         if (chars[i] == chars[j]) {
+                                                    System.out.println(chars[j]);
+                                                    count++;
+                                                    break;
+                                          }
+                               }
+                   }
+           }
+36. Can you find the second highest number in given array?
+Ans.
+
+public static void main(String[] args)
+    {
+        int arr[] = { 1,4,2,3,5};
+        int largest = 0;
+        int secondLargest = 0;
+        for (int i = 0; i < arr.length; i++)
+        {
+            System.out.print(arr[i] + "\t");
+        }
+        for (int i = 0; i  largest)
+            {
+                secondLargest = largest;
+                largest = arr[i];
+            }
+            else if (arr[i] > secondLargest)
+            {
+                secondLargest = arr[i];
+            }
+        }
+        System.out.println(secondLargest);
+    }
+37. Write a program to remove all spaces from string.
+Ans. Replace all “ “ characters by “”.
+public static void main(String[] args)
+{
+String str1 = "this string contains spaces";
+String str2 = str1.replaceAll("\s", "");
+System.out.println(str2);
+}
+38. Write a program to find the first non-repeating character of a string.
+Ans.
+
+public static charsolve(String word) {
+        Set duplicate = new HashSet();
+        List nonDuplicate = new ArrayList();
+        for (int i = 0; i < word.length(); i++) {
+            char letter = word.charAt(i);
+            if (duplicate.contains(letter)) {
+                continue;
+            }
+            if (nonDuplicate.contains(letter)) {
+                nonDuplicate.remove((Character) letter);
+                duplicate.add(letter);
+            } else {
+                nonDuplicate.add(letter);
+            }
+        }
+        return nonDuplicate.get(0);
+    }
+39. Write a program to transpose a matrix.
+Ans.
+
+public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);row
+        int row = sc.nextInt();
+        int col = sc.nextInt();        
+        int[][] matrics = new int[row][col],
+                matricsT = new int[col][row];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                matrics[i][j] = sc.nextInt();
+            }
+        }
+        for (int i = 0; i < kol; i++) {
+            for (int j = 0; j < row; j++) {
+                matricsT[i][j] = matrics[j][i];
+                System.out.print(matricsT[i][j] + " ");
+            }
+            System.out.println("");
+        }
+    }
+40. Print all the substrings of a string.
+Ans.
+
+public static void PrintSubstring(String str, int length) {
+        for (int i = 0; i < length; i++) {
+            for (int j = i + 1; j <= length; j++) {
+                System.out.println(str.substring(i, j));
+            }
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in); 
+        String str= sc.nextLine(); 
+        PrintSubstring(str, str.length());
+    }
+41. Given an array of 0’s and 1’s in random order, you need to separate 0’s and 1’s in an array.
+Ans.
+
+public static int[] separate0s1sSolution1(int arr[]){
+int count=0;
+for (int i = 0; i < arr.length; i++) {
+if(arr[i]==0)
+{
+count++;
+}
+}
+for (int i = 0; i < count; i++) {
+arr[i]=0;
+}
+for (int i = count; i < arr.length; i++) {
+arr[i]=1;
+}
+return arr;
+}
+42. Suppose you are given an integer array containing 1 to n but one of the number from 1 to n in the array is missing. You need to provide optimum solution to find the missing number.
+Ans.
+
+public static void main(String[] args) {
+        int[] arr1={1,3,6,4,2};
+        System.out.println(missingNumber(arr1));
+    }
+    public static int missingNumber(int[] arr)
+    {
+        int n=arr.length+1;
+        int sum=n*(n+1)/2;
+        int restSum=0;
+        for (int i = 0; i < arr.length; i++) {
+            restSum+=arr[i];
+        }
+        int missingNumber=sum-restSum;
+        return missingNumber;    }
+Output: 5
+43. You are given an array, find the subarray with a given sum.
+Ans.
+
+public void findSubarraySum(int arr[], int target) {        
+        int left = 0;
+        int right = left + 1;
+        int sum = 0;
+        if (arr.length == 0) {
+            System.out.println("-1");
+            return;
+        } 
+        if (arr.length == 1) {          
+            if (arr[0] == target) {
+                System.out.println((arr[0] + 1) + " " + (arr[0] + 1));
+            } else {
+                System.out.println("-1");
+            }
+        }
+        sum += arr[left] + arr[right];
+        while (right < arr.length) {         
+            if (sum == target) {
+                System.out.println((left + 1) + " " + (right + 1));
+                return;
+            } else if (sum < target) {               
+                right++;
+                if (right = 0) {
+            int n = in.nextInt();
+            int target = in.nextInt();
+            int[] arr = new int[n];
+            for (int i = 0; i < arr.length; i++) {
+                arr[i] = in.nextInt();
+            }       
+            ss.findSubarraySum(arr, target);
+        }
+    }
+44. Count the frequency of each element in the array.
+Ans.
+
+public static void main(String args[]){
+    Scanner sys = new Scanner (System.in);
+    int count=0;
+    int num = sys.nextInt();    
+    int arr[] = new int[num];
+    for(int i=0;i<num;i++){
+        arr[i] = sys.nextInt();
+    }   
+    for(int i=0;i<num;i++){
+        count=1;
+        for(int j=i+1;j<num;j++){
+            if(arr[i]==arr[j] && arr[i]!='\0'){
+                count++;
+                arr[j]='\0';
+            }
+        }  
+        if(arr[i]!='\0'){
+            System.out.println(arr[i]);
+        }
+    }   
+}
+45. Find the first repeating element In the array.
+Ans.
+
+void firstrep(int a[], int n) 
+    {
+        Set set = new HashSet();
+        int firstrepeating = -1;
+        for (int i = 0; i < n; i++){            
+            if (set.contains(a[i])) {
+                majority = i;
+            } else {
+                set.add(a[i]);
+            }
+        }        
+        System.out.println(a[firstrepeating]);
+    }
+    public static void main(String[] args) 
+    {
+        int arr[] = {1, 2, 5, 4, 5, 5, 1, 2};
+        int n = arr.length;
+        firstrep(arr,n);
+    }
+Output: 2
+46. You are given an array, find the maximum subarray sum.
+Ans. We will use Kadane’s algorithm here
+
+public static void main(String[] args) {
+        int[] Arr = {5,2,-1,-2,3,-5,1};
+        findMaxSubArray(Arr);
+    }
+    public static void findMaxSubArray(int[] inputArray) {
+        int maxStartIndex = 0;
+        int maxEndIndex = 0;
+        int maxSum = Integer.MIN_VALUE;
+        int cumulativeSum = 0;
+        int maxStartIndexUntilNow = 0;
+        for (int currentIndex = 0; currentIndex  maxSum) {
+                maxSum = cumulativeSum;
+                maxStartIndex = maxStartIndexUntilNow;
+                maxEndIndex = currentIndex;
+            } 
+            if (cumulativeSum < 0) {
+                maxStartIndexUntilNow = currentIndex + 1;
+                cumulativeSum = 0;
+            }
+        }
+        System.out.println(maxSum);
+    }
+47. Write a program to rotate an array by k positions.
+Ans.
+
+public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in); 
+        int order ;  
+        int array_length = reader.nextInt(); 
+        int [] array_num = new int[array_length];  
+        int[] results = new int[array_length];
+
+        for (int i=0; i < array_length; i++){
+          array_num[i] = reader.nextInt();
+        }
+        order = reader.nextInt(); 
+        reader.close();                
+                int k = 0; 
+        for (int i = array_length , j = 0; j < array_length;  j++, i--) {
+            if (j = order ) {
+                            results[j] = array_num[k];
+                            k++;
+            }
+        }                
+        System.out.println(Arrays.toString(results));
+    }
+48. Suppose you are given an array, find the peak elements in the array.
+Ans. A peak element is an element that is greater than its neighbors.
+
+public int findPeakElement(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        int n = nums.length;
+        int start = 0;
+        int end = n - 1;
+        while (start + 1 > 1;
+            if (nums[mid] > nums[mid - 1] && nums[mid] > nums[mid + 1]) { 
+                return mid;
+            } else if (nums[mid] > nums[mid - 1]) { 
+                start = mid;
+            } else { 
+                end = mid;
+            }
+        }
+        return nums[start] > nums[end] ? start : end;
+    }
+49. Find the middle element of a linked list in one pass.
+Ans.
+
+public static int getMiddle(Node head)
+   {
+        Node slowPtr = head;
+        Node fastPtr = head;
+        while (fastPtr != null) {               
+            if (fastPtr.next != null) {
+                slowPtr = slowPtr.next;
+                fastPtr = fastPtr.next.next;    
+            } else {
+                fastPtr = fastPtr.next;
+            }               
+        }
+        return slowPtr.data;
+   }
+50. Write a function to add two numbers represented by two linked list.
+Ans.
+
+public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        if (l1 == null || l2 == null) {
+            return l1 == null ? l2 : l1;
+        }
+        Stack s1 = new Stack();
+        Stack s2 = new Stack();
+        Stack result = new Stack();
+        while (l1 != null) {
+            s1.push(l1);
+            l1 = l1.next;
+        }
+        while (l2 != null) {
+            s2.push(l2);
+            l2 = l2.next;
+        }
+        int carry = 0;
+        while (!s1.isEmpty() || !s2.isEmpty()) {
+            int sum = carry;
+            if (!s1.isEmpty()) {
+                sum += s1.pop().val;
+            }
+            if (!s2.isEmpty()) {
+                sum += s2.pop().val;
+            }
+            carry = sum / 10;
+            sum = sum % 10;
+            result.push(new ListNode(sum));
+        }
+        if (carry != 0) {
+            result.push(new ListNode(carry));
+        }
+        ListNode node = new ListNode(-1);
+        ListNode temp = node;
+        while (!result.isEmpty()) {
+            node.next = result.pop();
+            node = node.next;
+        }
+        return temp.next;
+    }
