@@ -1,4 +1,4 @@
-package com.p2.inheritance;
+package com.pradeip.poc.corejava.inheritance;
 
 /* File name : Employee.java */
 public class Employee {

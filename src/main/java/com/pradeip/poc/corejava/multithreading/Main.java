@@ -1,4 +1,4 @@
-package com.p2.multithreading;
+package com.pradeip.poc.corejava.multithreading;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package com.p2.json;
+package com.pradeip.poc.corejava.json;
 
 import java.io.File;
 import java.io.IOException;

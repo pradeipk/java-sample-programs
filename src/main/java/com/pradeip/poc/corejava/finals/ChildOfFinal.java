@@ -1,4 +1,4 @@
-package com.p2.finals;
+package com.pradeip.poc.corejava.finals;
 
 
 /**

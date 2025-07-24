@@ -1,4 +1,4 @@
-package com.p2.exception;
+package com.pradeip.poc.corejava.exception;
 
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -1,4 +1,4 @@
-package com.p2.DS;
+package com.pradeip.poc.corejava.DS;
 
 class LinearSearch {
 	// This function returns index of element x in arr[]

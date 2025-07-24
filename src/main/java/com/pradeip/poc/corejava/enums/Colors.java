@@ -1,4 +1,4 @@
-package com.p2.enums;
+package com.pradeip.poc.corejava.enums;
 
 //A Java program to demonstrate that we can have
 //main() inside enum class.

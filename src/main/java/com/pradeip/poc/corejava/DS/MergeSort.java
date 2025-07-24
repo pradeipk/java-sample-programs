@@ -1,4 +1,4 @@
-package com.p2.DS;
+package com.pradeip.poc.corejava.DS;
 
 /* Java program for Merge Sort */
 class MergeSort {

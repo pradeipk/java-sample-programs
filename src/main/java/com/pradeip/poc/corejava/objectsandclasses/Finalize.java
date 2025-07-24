@@ -1,4 +1,4 @@
-package com.p2.objectsandclasses;
+package com.pradeip.poc.corejava.objectsandclasses;
 
 /**
  * To demonstrate the use finalize method

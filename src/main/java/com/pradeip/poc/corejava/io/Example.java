@@ -1,4 +1,4 @@
-package com.p2.io;
+package com.pradeip.poc.corejava.io;
 
 import java.io.*;
 class Example {  

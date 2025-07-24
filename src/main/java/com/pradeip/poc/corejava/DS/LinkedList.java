@@ -1,4 +1,4 @@
-package com.p2.DS;
+package com.pradeip.poc.corejava.DS;
 
 //A simple Java program to introduce a linked list
 class LinkedList {

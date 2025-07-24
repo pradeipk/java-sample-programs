@@ -1,43 +1,45 @@
 package com.pradeip.poc.corejava.designproblems;
 
+public class ParkingSpot {
+    private Vehicle vehicle;
+    private VehicleSize spotSize;
+    private int row;
+    private int spotNumber;
+    private Level level;
 
-//http://www.geeksforgeeks.org/design-parking-lot-using-object-oriented-principles/
+    public ParkingSpot(Level level, int row, int spotNumber, VehicleSize spotSize) {
+        this.level = level;
+        this.row = row;
+        this.spotNumber = spotNumber;
+        this.spotSize = spotSize;
+    }
 
+    public boolean isAvailable() {
+        return vehicle == null;
+    }
 
-public class ParkingSpot
-{
-	private Vehicle vehicle;
-	private VehicleSize spotSize;
-	private int row;
-	private int spotNumber;
-	private Level level;
+    public boolean canFitVehicle(Vehicle vehicle) {
+        return isAvailable() && vehicle.getSize().ordinal() <= spotSize.ordinal();
+    }
 
-	public ParkingSpot(Level lvl, int r, int n,
-						VehicleSize s)
-	{ ... }
+    public boolean park(Vehicle vehicle) {
+        if (!canFitVehicle(vehicle)) {
+            return false;
+        }
+        this.vehicle = vehicle;
+        return true;
+    }
 
-	public boolean isAvailable()
-	{
-		return vehicle == null;
-	}
+    public void removeVehicle() {
+        this.vehicle = null;
+        level.spotFreed();
+    }
 
-	/* Check if the spot is big enough and is available */
-	public boolean canFitVehicle(Vehicle vehicle) { ... }
+    public int getRow() {
+        return row;
+    }
 
-	/* Park vehicle in this spot. */
-	public boolean park(Vehicle v) {..}
-
-	public int getRow()
-	{
-		return row;
-	}
-	public int getSpotNumber()
-	{
-		return spotNumber;
-	}
-
-	/* Remove vehicle from spot, and notify
-	level that a new spot is available */
-	public void removeVehicle() { ... }
+    public int getSpotNumber() {
+        return spotNumber;
+    }
 }
-

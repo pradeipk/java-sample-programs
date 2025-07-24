@@ -1,4 +1,4 @@
-package com.p2.Oops;
+package com.pradeip.poc.corejava.Oops;
 // Examples of Abstraction 
 abstract class Shape {
 	abstract void draw();

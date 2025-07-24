@@ -1,9 +1,4 @@
-package com.p2.multithreading;
-
-//A Java program to demonstrate working of
-//synchronized.
-import java.io.*;
-import java.util.*;
+package com.pradeip.poc.corejava.multithreading;
 
 //A Class used to send a message
 class Sender {

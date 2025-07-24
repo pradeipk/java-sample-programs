@@ -1,4 +1,4 @@
-package com.p2.designproblems;
+package com.pradeip.poc.corejava.designproblems;
 
 import java.util.ArrayList;
 

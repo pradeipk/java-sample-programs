@@ -1,4 +1,4 @@
-package com.p2.multithreading;
+package com.pradeip.poc.corejava.multithreading;
 
 //Java code for thread creation by extending
 //the Thread class

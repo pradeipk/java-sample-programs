@@ -1,4 +1,4 @@
-package com.p2.inheritance;
+package com.pradeip.poc.corejava.inheritance;
 
 class Animal {
 	public void move() {

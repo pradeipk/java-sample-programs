@@ -1,4 +1,4 @@
-package com.p2.multithreading;
+package com.pradeip.poc.corejava.multithreading;
 
 // Class and the main method in it 
 class TestSleepMethod1 extends Thread {

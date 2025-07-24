@@ -1,4 +1,4 @@
-package com.p2.enums;
+package com.pradeip.poc.corejava.enums;
 
 //A simple enum example where enum is declared
 //outside any class (Note enum keyword instead of

@@ -1,4 +1,4 @@
-package com.p2.enums;
+package com.pradeip.poc.corejava.enums;
 //A Java program to demonstrate working on enum
 //in switch case (Filename Test. Java)
 //An Enum class

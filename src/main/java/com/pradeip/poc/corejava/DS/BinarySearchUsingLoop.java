@@ -1,4 +1,4 @@
-package com.p2.DS;
+package com.pradeip.poc.corejava.DS;
 
 // This algorithm works on sorted array only
 public class BinarySearchUsingLoop {
@@ -6,8 +6,12 @@ public class BinarySearchUsingLoop {
 	// return -1
 	int binarySearch(int arr[], int x) {
 		int l = 0, r = arr.length - 1;
+		int m;
 		while (l <= r) {
-			int m = l + (r - l) / 2;
+			m = (l+r)/2;
+			System.out.println("Middle is ->:" + m);
+			m = l + (r - l) / 2;
+			System.out.println("Middle is:" + m);
 			// Check if x is present at mid
 			if (arr[m] == x)
 				return m;

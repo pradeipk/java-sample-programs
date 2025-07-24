@@ -1,6 +1,5 @@
 package com.pradeip.poc.corejava.designpatterns;
 
-
 //Java program to
 //illustrate Service Design Service
 //Locator Pattern
@@ -14,6 +13,7 @@ import java.util.List;
 
 interface Service {
 	public String getName();
+
 	public void execute();
 }
 
@@ -66,8 +66,7 @@ class Cache {
 	public Service getService(String serviceName) {
 		for (Service service : services) {
 			if (service.getName().equalsIgnoreCase(serviceName)) {
-				System.out.println("Returning cached " + serviceName
-						+ " object");
+				System.out.println("Returning cached " + serviceName + " object");
 				return service;
 			}
 		}

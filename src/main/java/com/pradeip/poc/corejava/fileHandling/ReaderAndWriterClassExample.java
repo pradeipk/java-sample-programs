@@ -1,4 +1,4 @@
-package com.p2.fileHandling;
+package com.pradeip.poc.corejava.fileHandling;
 
 import java.io.BufferedReader;
 import java.io.File;

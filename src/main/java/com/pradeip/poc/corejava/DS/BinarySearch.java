@@ -1,4 +1,4 @@
-package com.p2.DS;
+package com.pradeip.poc.corejava.DS;
 
 class BinarySearch {
 	int binarySearch(int arr[], int l, int r, int x) {

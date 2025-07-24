@@ -1,4 +1,4 @@
-package com.p2.inheritance;
+package com.pradeip.poc.corejava.inheritance;
 
 public class Main {
 

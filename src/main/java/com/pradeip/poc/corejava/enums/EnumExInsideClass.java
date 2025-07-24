@@ -1,7 +1,8 @@
-package com.p2.enums;
+package com.pradeip.poc.corejava.enums;
 
 //enum declaration inside a class.
 public class EnumExInsideClass {
+	// An enum (Note enum keyword instead of class keyword)
 	enum Color {
 		RED, GREEN, BLUE;
 	}

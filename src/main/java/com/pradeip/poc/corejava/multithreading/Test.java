@@ -1,4 +1,4 @@
-package com.p2.multithreading;
+package com.pradeip.poc.corejava.multithreading;
 
 //Java program to demonstrate thread states
 class thread implements Runnable {

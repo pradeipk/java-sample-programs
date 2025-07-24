@@ -1,4 +1,4 @@
-package com.p2.fileHandling;
+package com.pradeip.poc.corejava.fileHandling;
 
 import java.io.File;
 import java.io.FileInputStream;

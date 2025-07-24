@@ -1,4 +1,4 @@
-package com.p2.enums;
+package com.pradeip.poc.corejava.enums;
 
 //Java program to demonstrate that enums can have constructor
 //and concrete methods.
