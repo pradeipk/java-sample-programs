@@ -31,7 +31,17 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.15.2</version>
-		</dependency>
+		</dependency>		
+		<dependency>
+        <groupId>com.tts.in</groupId>
+        <artifactId>fyersjavasdk</artifactId>
+        <version>1.0</version>
+    </dependency> 
+    <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>20211205</version>
+    </dependency>
 	</dependencies>
 
 </project>
